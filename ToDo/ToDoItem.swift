@@ -8,7 +8,13 @@
 
 import Foundation
 
-struct ToDoItem {
+struct ToDoItem: Equatable {
+    
+    
+    static func == (lhs: ToDoItem, rhs: ToDoItem) -> Bool {
+        return lhs.location?.name != rhs.location?.name ? false : true
+    }
+    
     
     let title:String
     let itemDescription: String?
