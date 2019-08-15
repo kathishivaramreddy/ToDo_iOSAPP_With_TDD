@@ -51,6 +51,42 @@ class ItemManagerTests: XCTestCase {
         
     }
     
+    func test_checkItemAt_ChangesCount() {
         
+        let item = ToDoItem(title: "item")
+        sut.add(item)
+        
+        sut.checkItem(at: 0)
+        XCTAssertEqual(sut.doneCount, 1)
+        XCTAssertEqual(sut.toDoCount, 0)
+    }
+    
+    func test_checkItemAt_RemovesItemFromToDoItem() {
+        
+        let item1 = ToDoItem(title: "item1")
+        let item2 = ToDoItem(title: "item2")
+        sut.add(item1)
+        sut.add(item2)
+        
+        sut.checkItem(at: 0)
+        
+        let returnedItem =  sut.item(at: 0)
+        XCTAssertEqual(returnedItem.title, item2.title)
+        
+    }
+    
+    func test_doneItemAt_ReturnsCheckedItem() {
+        
+        let item = ToDoItem(title: "item")
+        sut.add(item)
+        
+        sut.checkItem(at: 0)
+        
+        let doneItem = sut.doneItem(at:0)
+        XCTAssertEqual(doneItem.title, item.title)
+        
+        
+    }
+    
     
 }

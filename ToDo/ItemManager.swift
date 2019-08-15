@@ -10,19 +10,28 @@ import Foundation
 
 struct ItemManager {
     
-    var toDoCount = 0
-    var doneCount = 0
+    var toDoCount: Int { return toDoItem.count }
+    var doneCount: Int {return doneToDoItem.count}
     
     private var toDoItem = [ToDoItem]()
+    private var doneToDoItem = [ToDoItem]()
     
     mutating func add(_ item: ToDoItem) {
-        toDoCount += 1
+       
         toDoItem.append(item)
     }
     
-    func item(at index: Int) -> ToDoItem{
+    func item(at index: Int) -> ToDoItem {
         
         return toDoItem[index]
     }
     
+    mutating func checkItem(at index: Int) {
+        let doneItem = toDoItem.remove(at: index)
+        doneToDoItem.append(doneItem)
+    }
+    
+    func doneItem(at index: Int) -> ToDoItem {
+        return doneToDoItem[index]
+    }
 }
