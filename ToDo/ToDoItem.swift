@@ -10,9 +10,12 @@ import Foundation
 
 struct ToDoItem: Equatable {
     
-    
     static func == (lhs: ToDoItem, rhs: ToDoItem) -> Bool {
-        return lhs.location?.name != rhs.location?.name ? false : true
+        if lhs.location != rhs.location || lhs.timeStamp != rhs.timeStamp || lhs.itemDescription != rhs.itemDescription || lhs.title != rhs.title {
+            return false
+            
+        }
+        return true
     }
     
     

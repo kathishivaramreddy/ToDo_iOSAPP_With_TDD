@@ -59,6 +59,30 @@ class ToDoItemTests: XCTestCase {
         
     }
     
+    func test_Items_WhenTimeStampDiffers_AreNotEqual() {
+        
+        let item1 = ToDoItem(title: "title", timeStamp: 0.0)
+        let item2 = ToDoItem(title: "title", timeStamp: 1.0)
+        
+        XCTAssertNotEqual(item1, item2)
+    }
     
+    func test_Items_WhenDescriptionDiffers_AreNotEqual() {
+        
+        let item1 = ToDoItem(title: "title", itemDescription: "description1")
+        let item2 = ToDoItem(title: "title", itemDescription: "description2")
+        
+        XCTAssertNotEqual(item1,item2)
+        
+    }
     
+    func test_items_WhenTitleDiffers_AreNotEqual() {
+        
+        let item1 = ToDoItem(title: "title1")
+        let item2 = ToDoItem(title: "title2")
+        
+        XCTAssertNotEqual(item1, item2)
+        
+    }
+
 }
