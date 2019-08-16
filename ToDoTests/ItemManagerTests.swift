@@ -88,5 +88,30 @@ class ItemManagerTests: XCTestCase {
         
     }
     
+    func test_RemoveAll_ResultInCountsBeZero() {
+        
+        let item1 = ToDoItem(title: "item1")
+        let item2 = ToDoItem(title: "item2")
+        sut.add(item1)
+        sut.add(item2)
+        
+        sut.checkItem(at: 0)
+        
+        sut.removeAll()
+        
+        XCTAssertEqual(sut.toDoCount, 0)
+        XCTAssertEqual(sut.doneCount, 0)
+        
+    }
+    
+    func test_Add_WhenUnique() {
+        
+        let item1 = ToDoItem(title: "item1")
+        let item2 = ToDoItem(title: "item1")
+        sut.add(item1)
+        sut.add(item2)
+        XCTAssertEqual(sut.toDoCount, 1)
+        
+    }
     
 }

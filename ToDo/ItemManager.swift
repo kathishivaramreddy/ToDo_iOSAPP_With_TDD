@@ -17,8 +17,10 @@ struct ItemManager {
     private var doneToDoItem = [ToDoItem]()
     
     mutating func add(_ item: ToDoItem) {
-       
-        toDoItem.append(item)
+        if !toDoItem.contains(item) {
+            toDoItem.append(item)
+        }
+        
     }
     
     func item(at index: Int) -> ToDoItem {
@@ -33,5 +35,10 @@ struct ItemManager {
     
     func doneItem(at index: Int) -> ToDoItem {
         return doneToDoItem[index]
+    }
+    
+    mutating func removeAll() {
+        toDoItem.removeAll()
+        doneToDoItem.removeAll()
     }
 }
