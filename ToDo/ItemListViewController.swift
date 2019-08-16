@@ -19,18 +19,50 @@ class ItemListViewController: UIViewController {
     }
 
     @IBOutlet weak var tableView: UITableView!
-
+    var itemManager: ItemManager?
+    
 }
 
 
 extension ItemListViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        
+        let numberOfRows: Int
+        switch section {
+        case 0:
+            numberOfRows = itemManager?.toDoCount ?? 0
+        case 1:
+            numberOfRows = itemManager?.doneCount ?? 0
+        default:
+            numberOfRows = 0
+        }
+        return numberOfRows
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let itemCell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        
+        let item: ToDoItem
+        switch indexPath.section {
+        case 0:
+            item = (itemManager?.item(at: indexPath.row))!
+        case 1:
+            item = (itemManager?.item(at: indexPath.row))!
+        default:
+           item = ToDoItem(title: "not found")
+        }
+       
+        itemCell.configCell(with: item)
+        
+        return itemCell
     }
+    
+    
     
 }
