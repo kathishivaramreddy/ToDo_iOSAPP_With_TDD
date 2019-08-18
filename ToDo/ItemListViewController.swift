@@ -63,6 +63,17 @@ extension ItemListViewController: UITableViewDelegate, UITableViewDataSource {
         return itemCell
     }
     
-    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        let title: String
+        switch indexPath.section {
+        case 0:
+            title = "Check"
+        case 1:
+            title = "UnCheck"
+        default:
+            title = " "
+        }
+        return title
+    }
     
 }

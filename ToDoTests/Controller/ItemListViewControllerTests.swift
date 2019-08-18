@@ -126,6 +126,18 @@ class ItemListViewControllerTests: XCTestCase {
         XCTAssertTrue(cell.configCellGotCalled)
         
     }
+    
+    func test_DeleteButton_InFirstSection_ShowsTitleCheck() {
+        
+        let deleteButtonTitle = sut.tableView.delegate?.tableView?(sut.tableView, titleForDeleteConfirmationButtonForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(deleteButtonTitle, "Check")
+    }
+    
+    func test_DeleteButton_InSeconfSection_ShowsTitleCheck() {
+        
+        let deleteButtonTitle = sut.tableView.delegate?.tableView?(sut.tableView, titleForDeleteConfirmationButtonForRowAt: IndexPath(row: 0, section: 1))
+        XCTAssertEqual(deleteButtonTitle, "UnCheck")
+    }
 
 }
 

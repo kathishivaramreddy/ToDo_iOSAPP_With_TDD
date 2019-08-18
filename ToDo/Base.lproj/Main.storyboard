@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qID-8e-XWx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,6 +49,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="81" y="0.0"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4ps-TH-8a4">
+            <objects>
+                <viewController id="qID-8e-XWx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L2Z-5W-ZvM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TiE-ll-8VP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="SbV-W8-fmk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="210.5"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAY-az-BjS">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="210.5"/>
+                                            </pickerView>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaU-0c-h4s">
+                                                <rect key="frame" x="198" y="0.0" width="177" height="210.5"/>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n9X-Wh-rbz">
+                                        <rect key="frame" x="0.0" y="218.5" width="375" height="210"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tK-CT-1Nj">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="210"/>
+                                            </pickerView>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVd-Em-x7v">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="210"/>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="I4v-Lj-bos">
+                                        <rect key="frame" x="0.0" y="436.5" width="375" height="210.5"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4N-n2-5Hi">
+                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="210.5"/>
+                                            </pickerView>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBO-n8-yyN">
+                                                <rect key="frame" x="207.5" y="0.0" width="167.5" height="210.5"/>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TiE-ll-8VP" secondAttribute="bottom" id="Ac5-In-SiB"/>
+                            <constraint firstItem="TiE-ll-8VP" firstAttribute="top" secondItem="MvI-qe-QFx" secondAttribute="top" id="J4P-XQ-BdR"/>
+                            <constraint firstItem="TiE-ll-8VP" firstAttribute="leading" secondItem="MvI-qe-QFx" secondAttribute="leading" id="Jtv-Dh-Mc2"/>
+                            <constraint firstAttribute="trailing" secondItem="TiE-ll-8VP" secondAttribute="trailing" id="jyE-f2-umq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MvI-qe-QFx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ke5-lm-OFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="-22"/>
         </scene>
     </scenes>
 </document>
