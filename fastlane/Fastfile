@@ -9,7 +9,7 @@ app_version = '1.0'
 platform :ios do
 
   before_all do
-    scan(scheme:"ToDo", project:"ToDo.xcodeproj")
+    #scan(scheme:"ToDo", project:"ToDo.xcodeproj")
   end
 
   desc "Description of what the lane does"
